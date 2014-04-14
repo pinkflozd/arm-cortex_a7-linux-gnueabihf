@@ -20,6 +20,7 @@ GLIBC_PRIVATE {
     _nss_files_getgrnam_r;
     _nss_files_gethostbyaddr_r;
     _nss_files_gethostbyname2_r;
+    _nss_files_gethostbyname3_r;
     _nss_files_gethostbyname4_r;
     _nss_files_gethostbyname_r;
     _nss_files_gethostent_r;

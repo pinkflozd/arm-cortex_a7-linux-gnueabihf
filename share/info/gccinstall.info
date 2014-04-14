@@ -1,4 +1,4 @@
-This is gccinstall.info, produced by makeinfo version 5.1 from
+This is gccinstall.info, produced by makeinfo version 5.2 from
 install.texi.
 
 Copyright (C) 1988-2013 Free Software Foundation, Inc.
@@ -4460,6 +4460,6 @@ Node: Specific110159
 Node: Old161308
 Node: Configurations164441
 Node: GNU Free Documentation License167979
-Node: Concept Index193106
+Node: Concept Index193107
 
 End Tag Table

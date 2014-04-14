@@ -1,6 +1,6 @@
 python
 import sys
-sys.path.insert(0, '/home/pinkflozd/android/tool/lib/ct-ng-linaro-1.13.1+bzr2646/builds/arm-cortex_a7-linux-gnueabihf/share/gcc-4.8.3/python')
+sys.path.insert(0, '/home/pinkflozd/tool/lib/ct-ng-linaro-1.13.1+bzr2650/builds/arm-cortex_a7-linux-gnueabihf/share/gcc-4.8.3/python')
 from libstdcxx.v6.printers import register_libstdcxx_printers
 register_libstdcxx_printers (None)
 end

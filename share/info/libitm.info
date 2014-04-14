@@ -1,4 +1,4 @@
-This is libitm.info, produced by makeinfo version 5.1 from libitm.texi.
+This is libitm.info, produced by makeinfo version 5.2 from libitm.texi.
 
 Copyright (C) 2011-2013 Free Software Foundation, Inc.
 
@@ -1288,6 +1288,6 @@ Node: Internals18026
 Ref: serial-lock-impl28064
 Ref: progress-guarantees32825
 Node: GNU Free Documentation License35103
-Node: Index60224
+Node: Index60225
 
 End Tag Table

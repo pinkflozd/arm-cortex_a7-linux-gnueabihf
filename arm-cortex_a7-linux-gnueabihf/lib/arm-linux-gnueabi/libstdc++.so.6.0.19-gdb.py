@@ -19,8 +19,8 @@ import gdb
 import os
 import os.path
 
-pythondir = '/home/pinkflozd/android/tool/lib/ct-ng-linaro-1.13.1+bzr2646/builds/arm-cortex_a7-linux-gnueabihf/share/gcc-4.8.3/python'
-libdir = '/home/pinkflozd/android/tool/lib/ct-ng-linaro-1.13.1+bzr2646/builds/arm-cortex_a7-linux-gnueabihf/arm-cortex_a7-linux-gnueabihf/lib/arm-linux-gnueabi'
+pythondir = '/home/pinkflozd/tool/lib/ct-ng-linaro-1.13.1+bzr2650/builds/arm-cortex_a7-linux-gnueabihf/share/gcc-4.8.3/python'
+libdir = '/home/pinkflozd/tool/lib/ct-ng-linaro-1.13.1+bzr2650/builds/arm-cortex_a7-linux-gnueabihf/arm-cortex_a7-linux-gnueabihf/lib/arm-linux-gnueabi'
 
 # This file might be loaded when there is no current objfile.  This
 # can happen if the user loads it manually.  In this case we don't

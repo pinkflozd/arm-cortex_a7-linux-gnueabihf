@@ -56,6 +56,7 @@ Software development
 * As: (as).                     The GNU assembler.
 * Bfd: (bfd).                   The Binary File Descriptor library.
 * Binutils: (binutils).         The GNU binary utilities.
+* Cpp: (cpp).                   The GNU C preprocessor.
 * Cpplib: (cppinternals).       Cpplib internals.
 * Gas: (as).                    The GNU assembler.
 * Gdb: (gdb).                   The GNU debugger.
@@ -64,7 +65,6 @@ Software development
 * Stabs: (stabs).               The "stabs" debugging information format.
 * g++: (gcc).                   The GNU C++ compiler.
 * gcc: (gcc).                   The GNU Compiler Collection.
-* gccinstall: (gccinstall).     Installing the GNU Compiler Collection.
 * gccint: (gccint).             Internals of the GNU Compiler Collection.
 * gcov: (gcc) Gcov.             'gcov'--a test coverage program.
 * gfortran: (gfortran).         The GNU Fortran Compiler.

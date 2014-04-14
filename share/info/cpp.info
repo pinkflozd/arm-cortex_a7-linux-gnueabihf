@@ -1,4 +1,4 @@
-This is cpp.info, produced by makeinfo version 5.1 from cpp.texi.
+This is cpp.info, produced by makeinfo version 5.2 from cpp.texi.
 
 Copyright (C) 1987-2013 Free Software Foundation, Inc.
 
@@ -5555,8 +5555,8 @@ Ref: dashMF173037
 Ref: fdollars-in-identifiers182779
 Node: Environment Variables192606
 Node: GNU Free Documentation License195572
-Node: Index of Directives220716
-Node: Option Index222796
-Node: Concept Index229199
+Node: Index of Directives220717
+Node: Option Index222797
+Node: Concept Index229200
 
 End Tag Table

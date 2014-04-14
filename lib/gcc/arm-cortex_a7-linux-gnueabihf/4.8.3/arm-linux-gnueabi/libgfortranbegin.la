@@ -38,4 +38,4 @@ dlopen=''
 dlpreopen=''
 
 # Directory that this library needs to be installed in:
-libdir='/home/pinkflozd/android/tool/lib/ct-ng-linaro-1.13.1+bzr2646/builds/arm-cortex_a7-linux-gnueabihf/lib/gcc/arm-cortex_a7-linux-gnueabihf/4.8.3/arm-linux-gnueabi'
+libdir='/home/pinkflozd/tool/lib/ct-ng-linaro-1.13.1+bzr2650/builds/arm-cortex_a7-linux-gnueabihf/lib/gcc/arm-cortex_a7-linux-gnueabihf/4.8.3/arm-linux-gnueabi'

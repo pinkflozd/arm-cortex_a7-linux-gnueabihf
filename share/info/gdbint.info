@@ -1,4 +1,4 @@
-This is gdbint.info, produced by makeinfo version 5.1 from
+This is gdbint.info, produced by makeinfo version 5.2 from
 gdbint.texinfo.
 
 Copyright (C) 1990-2013 Free Software Foundation, Inc.  Contributed by
@@ -5125,6 +5125,7 @@ versions, as that is not possible in plain C.
      for (ix = 0; VEC_iterate(tree, s->v, ix, elt); ix++)
        { do something with elt }
 
+
    The 'vec.h' file provides details on how to invoke the various
 accessors provided.  They are enumerated here:
 
@@ -8854,22 +8855,22 @@ Node: Managing Execution State203353
 Node: Existing Targets205166
 Node: Native Debugging207681
 Node: Support Libraries211510
-Node: Coding Standards223035
-Node: Misc Guidelines231659
-Node: Porting GDB250052
-Node: Versions and Branches251929
-Ref: Tags257879
-Ref: experimental branch tags258209
-Node: Start of New Year Procedure258941
-Node: Releasing GDB260393
-Node: Testsuite278591
-Ref: Testsuite-Footnote-1293452
-Node: Hints293570
-Node: Getting Started293892
-Node: Debugging GDB298056
-Node: GDB Observers303183
-Node: GNU Free Documentation License312561
-Node: Concept Index337716
-Node: Function and Variable Index361361
+Node: Coding Standards223036
+Node: Misc Guidelines231660
+Node: Porting GDB250053
+Node: Versions and Branches251930
+Ref: Tags257880
+Ref: experimental branch tags258210
+Node: Start of New Year Procedure258942
+Node: Releasing GDB260394
+Node: Testsuite278592
+Ref: Testsuite-Footnote-1293453
+Node: Hints293571
+Node: Getting Started293893
+Node: Debugging GDB298057
+Node: GDB Observers303184
+Node: GNU Free Documentation License312562
+Node: Concept Index337718
+Node: Function and Variable Index361363
 
 End Tag Table

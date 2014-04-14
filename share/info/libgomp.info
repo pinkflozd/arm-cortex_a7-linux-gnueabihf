@@ -1,4 +1,4 @@
-This is libgomp.info, produced by makeinfo version 5.1 from
+This is libgomp.info, produced by makeinfo version 5.2 from
 libgomp.texi.
 
 Copyright (C) 2006-2013 Free Software Foundation, Inc.
@@ -2901,8 +2901,8 @@ Node: Implementing SECTIONS construct51488
 Node: Implementing SINGLE construct52254
 Node: Reporting Bugs52916
 Node: Copying53226
-Node: GNU Free Documentation License90772
-Node: Funding115894
-Node: Library Index118420
+Node: GNU Free Documentation License90773
+Node: Funding115896
+Node: Library Index118422
 
 End Tag Table
