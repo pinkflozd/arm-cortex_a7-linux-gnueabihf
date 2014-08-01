@@ -8,7 +8,7 @@
 dlname='libstdc++.so.6'
 
 # Names of this library.
-library_names='libstdc++.so.6.0.19 libstdc++.so.6 libstdc++.so'
+library_names='libstdc++.so.6.0.20 libstdc++.so.6 libstdc++.so'
 
 # The name of the static archive.
 old_library='libstdc++.a'
@@ -25,7 +25,7 @@ weak_library_names=''
 # Version information for libstdc++.
 current=6
 age=0
-revision=19
+revision=20
 
 # Is this an already installed library?
 installed=yes
@@ -38,4 +38,4 @@ dlopen=''
 dlpreopen=''
 
 # Directory that this library needs to be installed in:
-libdir='/home/pinkflozd/tool/lib/ct-ng-linaro-1.13.1+bzr2650/builds/arm-cortex_a7-linux-gnueabihf/arm-cortex_a7-linux-gnueabihf/lib'
+libdir='/home/pinkflozd/android/toolchain/lib/ct-ng-linaro-1.13.1+bzr2689/builds/arm-cortex_a7-linux-gnueabihf/arm-cortex_a7-linux-gnueabihf/lib'

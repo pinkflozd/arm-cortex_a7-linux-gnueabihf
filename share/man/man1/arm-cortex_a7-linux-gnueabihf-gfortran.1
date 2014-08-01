@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GFORTRAN 1"
-.TH GFORTRAN 1 "2014-03-03" "gcc-4.8.3" "GNU"
+.TH GFORTRAN 1 "2014-07-16" "gcc-4.9.1" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -202,12 +202,12 @@ by type.  Explanations are in the following sections.
 \&\-Wconversion \-Wfunction\-elimination \-Wimplicit\-interface 
 \&\-Wimplicit\-procedure \-Wintrinsic\-shadow \-Wintrinsics\-std 
 \&\-Wline\-truncation \-Wno\-align\-commons \-Wno\-tabs \-Wreal\-q\-constant 
-\&\-Wsurprising \-Wunderflow \-Wunused\-parameter \-Wrealloc\-lhs Wrealloc-lhs-all 
+\&\-Wsurprising \-Wunderflow \-Wunused\-parameter \-Wrealloc\-lhs \-Wrealloc\-lhs\-all 
 \&\-Wtarget\-lifetime \-fmax\-errors=\fR\fIn\fR \fB\-fsyntax\-only \-pedantic \-pedantic\-errors\fR
 .IP "\fIDebugging Options\fR" 4
 .IX Item "Debugging Options"
 \&\fB\-fbacktrace \-fdump\-fortran\-optimized \-fdump\-fortran\-original 
-\&\-fdump\-parse\-tree \-ffpe\-trap=\fR\fIlist\fR\fB \fR
+\&\-fdump\-parse\-tree \-ffpe\-trap=\fR\fIlist\fR \fB\-ffpe\-summary=\fR\fIlist\fR\fB \fR
 .IP "\fIDirectory Options\fR" 4
 .IX Item "Directory Options"
 \&\fB\-I\fR\fIdir\fR  \fB\-J\fR\fIdir\fR \fB\-fintrinsic\-modules\-path\fR \fIdir\fR
@@ -230,7 +230,7 @@ by type.  Explanations are in the following sections.
 \&\fB\-finit\-real=\fR\fI<zero|inf|\-inf|nan|snan>\fR 
 \&\fB\-fmax\-array\-constructor=\fR\fIn\fR \fB\-fmax\-stack\-var\-size=\fR\fIn\fR
 \&\fB\-fno\-align\-commons 
-\&\-fno\-automatic \-fno\-protect\-parens \-fno\-underscoring \-fno\-whole\-file 
+\&\-fno\-automatic \-fno\-protect\-parens \-fno\-underscoring 
 \&\-fsecond\-underscore \-fpack\-derived \-frealloc\-lhs \-frecursive 
 \&\-frepack\-arrays \-fshort\-enums \-fstack\-arrays\fR
 .SS "Options controlling Fortran dialect"
@@ -266,26 +266,6 @@ in fixed form sources.  If the \fB\-fd\-lines\-as\-code\fR option is
 given they are treated as if the first column contained a blank.  If the
 \&\fB\-fd\-lines\-as\-comments\fR option is given, they are treated as
 comment lines.
-.IP "\fB\-fdefault\-double\-8\fR" 4
-.IX Item "-fdefault-double-8"
-Set the \f(CW\*(C`DOUBLE PRECISION\*(C'\fR type to an 8 byte wide type.  If
-\&\fB\-fdefault\-real\-8\fR is given, \f(CW\*(C`DOUBLE PRECISION\*(C'\fR would
-instead be promoted to 16 bytes if possible, and \fB\-fdefault\-double\-8\fR
-can be used to prevent this.  The kind of real constants like \f(CW\*(C`1.d0\*(C'\fR will
-not be changed by \fB\-fdefault\-real\-8\fR though, so also
-\&\fB\-fdefault\-double\-8\fR does not affect it.
-.IP "\fB\-fdefault\-integer\-8\fR" 4
-.IX Item "-fdefault-integer-8"
-Set the default integer and logical types to an 8 byte wide type.
-Do nothing if this is already the default.  This option also affects
-the kind of integer constants like \f(CW42\fR.
-.IP "\fB\-fdefault\-real\-8\fR" 4
-.IX Item "-fdefault-real-8"
-Set the default real type to an 8 byte wide type.
-Do nothing if this is already the default.  This option also affects
-the kind of non-double real constants like \f(CW1.0\fR, and does promote
-the default width of \f(CW\*(C`DOUBLE PRECISION\*(C'\fR to 16 bytes if possible, unless
-\&\f(CW\*(C`\-fdefault\-double\-8\*(C'\fR is given, too.
 .IP "\fB\-fdollar\-ok\fR" 4
 .IX Item "-fdollar-ok"
 Allow \fB$\fR as a valid non-first character in a symbol name. Symbols 
@@ -340,16 +320,6 @@ Specify the maximum allowed identifier length. Typical values are
 Specify that no implicit typing is allowed, unless overridden by explicit
 \&\f(CW\*(C`IMPLICIT\*(C'\fR statements.  This is the equivalent of adding
 \&\f(CW\*(C`implicit none\*(C'\fR to the start of every procedure.
-.IP "\fB\-finteger\-4\-integer\-8\fR" 4
-.IX Item "-finteger-4-integer-8"
-Promote all \f(CW\*(C`INTEGER(KIND=4)\*(C'\fR entities to an \f(CW\*(C`INTEGER(KIND=8)\*(C'\fR
-entities.  If \f(CW\*(C`KIND=8\*(C'\fR is unavailable, then an error will be issued.
-This option should be used with care and may not be suitable for your codes.
-Areas of possible concern include calls to external procedures,
-alignment in \f(CW\*(C`EQUIVALENCE\*(C'\fR and/or \f(CW\*(C`COMMON\*(C'\fR, generic interfaces,
-\&\s-1BOZ\s0 literal constant conversion, and I/O.  Inspection of the intermediate
-representation of the translated Fortran code, produced by
-\&\fB\-fdump\-tree\-original\fR, is suggested.
 .IP "\fB\-fcray\-pointer\fR" 4
 .IX Item "-fcray-pointer"
 Enable the Cray pointer extension, which provides C\-like pointer
@@ -376,11 +346,44 @@ as appropriate.
 Similarly, \f(CW\*(C`DATA i/Z\*(AqFFFFFFFF\*(Aq/\*(C'\fR will result in an integer overflow
 on most systems, but with \fB\-fno\-range\-check\fR the value will
 \&\*(L"wrap around\*(R" and \f(CW\*(C`i\*(C'\fR will be initialized to \-1 instead.
+.IP "\fB\-fdefault\-integer\-8\fR" 4
+.IX Item "-fdefault-integer-8"
+Set the default integer and logical types to an 8 byte wide type.  This option
+also affects the kind of integer constants like \f(CW42\fR. Unlike
+\&\fB\-finteger\-4\-integer\-8\fR, it does not promote variables with explicit
+kind declaration.
+.IP "\fB\-fdefault\-real\-8\fR" 4
+.IX Item "-fdefault-real-8"
+Set the default real type to an 8 byte wide type. This option also affects
+the kind of non-double real constants like \f(CW1.0\fR, and does promote
+the default width of \f(CW\*(C`DOUBLE PRECISION\*(C'\fR to 16 bytes if possible, unless
+\&\f(CW\*(C`\-fdefault\-double\-8\*(C'\fR is given, too. Unlike \fB\-freal\-4\-real\-8\fR,
+it does not promote variables with explicit kind declaration.
+.IP "\fB\-fdefault\-double\-8\fR" 4
+.IX Item "-fdefault-double-8"
+Set the \f(CW\*(C`DOUBLE PRECISION\*(C'\fR type to an 8 byte wide type.  Do nothing if this
+is already the default.  If \fB\-fdefault\-real\-8\fR is given,
+\&\f(CW\*(C`DOUBLE PRECISION\*(C'\fR would instead be promoted to 16 bytes if possible, and
+\&\fB\-fdefault\-double\-8\fR can be used to prevent this.  The kind of real
+constants like \f(CW\*(C`1.d0\*(C'\fR will not be changed by \fB\-fdefault\-real\-8\fR
+though, so also \fB\-fdefault\-double\-8\fR does not affect it.
+.IP "\fB\-finteger\-4\-integer\-8\fR" 4
+.IX Item "-finteger-4-integer-8"
+Promote all \f(CW\*(C`INTEGER(KIND=4)\*(C'\fR entities to an \f(CW\*(C`INTEGER(KIND=8)\*(C'\fR
+entities.  If \f(CW\*(C`KIND=8\*(C'\fR is unavailable, then an error will be issued.
+This option should be used with care and may not be suitable for your codes.
+Areas of possible concern include calls to external procedures,
+alignment in \f(CW\*(C`EQUIVALENCE\*(C'\fR and/or \f(CW\*(C`COMMON\*(C'\fR, generic interfaces,
+\&\s-1BOZ\s0 literal constant conversion, and I/O.  Inspection of the intermediate
+representation of the translated Fortran code, produced by
+\&\fB\-fdump\-tree\-original\fR, is suggested.
 .IP "\fB\-freal\-4\-real\-8\fR" 4
 .IX Item "-freal-4-real-8"
 .PD 0
 .IP "\fB\-freal\-4\-real\-10\fR" 4
 .IX Item "-freal-4-real-10"
+.IP "\fB\-freal\-4\-real\-16\fR" 4
+.IX Item "-freal-4-real-16"
 .IP "\fB\-freal\-8\-real\-4\fR" 4
 .IX Item "-freal-8-real-4"
 .IP "\fB\-freal\-8\-real\-10\fR" 4
@@ -829,6 +832,10 @@ This option is implied by \fB\-Wextra\fR.
 .IX Item "-Wtarget-lifetime"
 Warn if the pointer in a pointer assignment might be longer than the its
 target. This option is implied by \fB\-Wall\fR.
+.IP "\fB\-Wzerotrip\fR" 4
+.IX Item "-Wzerotrip"
+Warn if a \f(CW\*(C`DO\*(C'\fR loop is known to execute zero times at compile
+time.  This option is implied by \fB\-Wall\fR.
 .IP "\fB\-Werror\fR" 4
 .IX Item "-Werror"
 Turns all warnings into errors.
@@ -880,6 +887,16 @@ due to rounding, and hence the \f(CW\*(C`ffpe\-trap=inexact\*(C'\fR is likely to
 be uninteresting in practice.
 .Sp
 By default no exception traps are enabled.
+.IP "\fB\-ffpe\-summary=\fR\fIlist\fR" 4
+.IX Item "-ffpe-summary=list"
+Specify a list of floating-point exceptions, whose flag status is printed
+to \f(CW\*(C`ERROR_UNIT\*(C'\fR when invoking \f(CW\*(C`STOP\*(C'\fR and \f(CW\*(C`ERROR STOP\*(C'\fR.
+\&\fIlist\fR can be either \fBnone\fR, \fBall\fR or a comma-separated list
+of the following exceptions: \fBinvalid\fR, \fBzero\fR, \fBoverflow\fR,
+\&\fBunderflow\fR, \fBinexact\fR and \fBdenormal\fR. (See
+\&\fB\-ffpe\-trap\fR for a description of the exceptions.)
+.Sp
+By default, a summary for all exceptions but \fBinexact\fR is shown.
 .IP "\fB\-fno\-backtrace\fR" 4
 .IX Item "-fno-backtrace"
 When a serious runtime error is encountered or a deadly signal is
@@ -1082,21 +1099,6 @@ issues so that debugging always involves using the names as they appear
 in the source, even if the names as seen by the linker are mangled to
 prevent accidental linking between procedures with incompatible
 interfaces.
-.IP "\fB\-fno\-whole\-file\fR" 4
-.IX Item "-fno-whole-file"
-This flag causes the compiler to resolve and translate each procedure in
-a file separately.
-.Sp
-By default, the whole file is parsed and placed in a single front-end tree.
-During resolution, in addition to all the usual checks and fixups, references
-to external procedures that are in the same file effect resolution of
-that procedure, if not already done, and a check of the interfaces.  The
-dependences are resolved by changing the order in which the file is
-translated into the backend tree.  Thus, a procedure that is referenced
-is translated before the reference and the duplication of backend tree
-declarations eliminated.
-.Sp
-The \fB\-fno\-whole\-file\fR option is deprecated and may lead to wrong code.
 .IP "\fB\-fsecond\-underscore\fR" 4
 .IX Item "-fsecond-underscore"
 By default, \s-1GNU\s0 Fortran appends an underscore to external
@@ -1385,7 +1387,7 @@ See the Info entry for \fBgfortran\fR for contributors to \s-1GCC\s0 and
 \&\s-1GNU\s0 Fortran.
 .SH "COPYRIGHT"
 .IX Header "COPYRIGHT"
-Copyright (c) 2004\-2013 Free Software Foundation, Inc.
+Copyright (c) 2004\-2014 Free Software Foundation, Inc.
 .PP
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the \s-1GNU\s0 Free Documentation License, Version 1.3 or

@@ -1,7 +1,7 @@
 This is gccinstall.info, produced by makeinfo version 5.2 from
 install.texi.
 
-Copyright (C) 1988-2013 Free Software Foundation, Inc.
+Copyright (C) 1988-2014 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -24,7 +24,7 @@ START-INFO-DIR-ENTRY
 * gccinstall: (gccinstall).    Installing the GNU Compiler Collection.
 END-INFO-DIR-ENTRY
 
-   Copyright (C) 1988-2013 Free Software Foundation, Inc.
+   Copyright (C) 1988-2014 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -133,6 +133,22 @@ ISO C++98 compiler
      bootstrapping the compiler with such earlier compilers is strongly
      discouraged.
 
+C standard library and headers
+
+     In order to build GCC, the C standard library and headers must be
+     present for all target variants for which target libraries will be
+     built (and not only the variant of the host C++ compiler).
+
+     This affects the popular 'x86_64-unknown-linux-gnu' platform (among
+     other multilib targets), for which 64-bit ('x86_64') and 32-bit
+     ('i386') libc headers are usually packaged separately.  If you do a
+     build of a native compiler on 'x86_64-unknown-linux-gnu', make sure
+     you either have the 32-bit libc developer package properly
+     installed (the exact name of the package depends on your distro) or
+     you must build GCC as a 64-bit only compiler by configuring with
+     the option '--disable-multilib'.  Otherwise, you may encounter an
+     error such as 'fatal error: gnu/stubs-32.h: No such file'
+
 GNAT
 
      In order to build the Ada compiler (GNAT) you must already have
@@ -239,26 +255,30 @@ MPC Library version 0.8.1 (or later)
      configure option should be used.  See also '--with-mpc-lib' and
      '--with-mpc-include'.
 
-ISL Library version 0.11.1
+ISL Library version 0.12.2
 
      Necessary to build GCC with the Graphite loop optimizations.  It
      can be downloaded from <ftp://gcc.gnu.org/pub/gcc/infrastructure/>
-     as 'isl-0.11.1.tar.bz2'.
+     as 'isl-0.12.2.tar.bz2'.  If an ISL source distribution is found in
+     a subdirectory of your GCC sources named 'isl', it will be built
+     together with GCC. Alternatively, the '--with-isl' configure option
+     should be used if ISL is not installed in your default library
+     search path.
 
-     The '--with-isl' configure option should be used if ISL is not
-     installed in your default library search path.
-
-CLooG 0.18.0
+CLooG 0.18.1
 
      Necessary to build GCC with the Graphite loop optimizations.  It
      can be downloaded from <ftp://gcc.gnu.org/pub/gcc/infrastructure/>
-     as 'cloog-0.18.0.tar.gz'.  The '--with-cloog' configure option
-     should be used if CLooG is not installed in your default library
-     search path.  CLooG needs to be built against ISL 0.11.1.  Use
-     '--with-isl=system' to direct CLooG to pick up an already installed
-     ISL, otherwise it will use ISL 0.11.1 as bundled with CLooG. CLooG
-     needs to be configured to use GMP internally, use '--with-bits=gmp'
-     to direct it to do that.
+     as 'cloog-0.18.1.tar.gz'.  If a CLooG source distribution is found
+     in a subdirectory of your GCC sources named 'cloog', it will be
+     built together with GCC. Alternatively, the '--with-cloog'
+     configure option should be used if CLooG is not installed in your
+     default library search path.
+
+     If you want to install CLooG separately it needs to be built
+     against ISL 0.12.2 by using the '--with-isl=system' to direct CLooG
+     to pick up an already installed ISL. Using the ISL library as
+     bundled with CLooG is not supported.
 
 Tools/packages necessary for modifying GCC
 ==========================================
@@ -299,7 +319,10 @@ Expect
 Tcl
 
      Necessary to run the GCC testsuite; see the section on testing for
-     details.
+     details.  Tcl 8.6 has a known regression in RE pattern handling
+     that make parts of the testsuite fail.  See
+     <http://core.tcl.tk/tcl/tktview/267b7e2334ee2e9de34c4b00d6e72e2f1997085f>
+     for more information.
 
 autogen version 5.5.4 (or later) and
 guile version 1.4.1 (or later)
@@ -732,6 +755,19 @@ option.
      '--disable-shared' does not accept a list of package names as
      argument, only '--enable-shared' does.
 
+     Contrast with '--enable-host-shared', which affects _host_ code.
+
+'--enable-host-shared'
+     Specify that the _host_ code should be built into
+     position-independent machine code (with -fPIC), allowing it to be
+     used within shared libraries, but yielding a slightly slower
+     compiler.
+
+     Currently this option is only of use to people developing GCC
+     itself.
+
+     Contrast with '--enable-shared', which affects _target_ libraries.
+
 '--with-gnu-as'
      Specify that the compiler should assume that the assembler it finds
      is the GNU assembler.  However, this does not modify the rules to
@@ -833,6 +869,19 @@ option.
      '--with-sysroot', and without '--with-native-system-header-dir'.
      More documentation about multiarch can be found at
      <http://wiki.debian.org/Multiarch>.
+
+'--enable-vtable-verify'
+     Specify whether to enable or disable the vtable verification
+     feature.  Enabling this feature causes libstdc++ to be built with
+     its virtual calls in verifiable mode.  This means that, when linked
+     with libvtv, every virtual call in libstdc++ will verify the vtable
+     pointer through which the call will be made before actually making
+     the call.  If not linked with libvtv, the verifier will call stub
+     functions (in libstdc++ itself) and do nothing.  If vtable
+     verification is disabled, then libstdc++ is not built with its
+     virtual calls in verifiable mode at all.  However the libvtv
+     library will still be built (see '--disable-libvtv' to turn off
+     building libvtv).  '--disable-vtable-verify' is the default.
 
 '--disable-multilib'
      Specify that multiple target libraries to support different target
@@ -977,10 +1026,10 @@ option.
      Specify which cpu variant the compiler should generate code for by
      default.  CPU will be used as the default value of the '-mcpu='
      switch.  This option is only supported on some targets, including
-     ARM, i386, M68k, PowerPC, and SPARC.  The '--with-cpu-32' and
-     '--with-cpu-64' options specify separate default CPUs for 32-bit
-     and 64-bit modes; these options are only supported for i386, x86-64
-     and PowerPC.
+     ARC, ARM, i386, M68k, PowerPC, and SPARC.  It is mandatory for ARC.
+     The '--with-cpu-32' and '--with-cpu-64' options specify separate
+     default CPUs for 32-bit and 64-bit modes; these options are only
+     supported for i386, x86-64 and PowerPC.
 
 '--with-schedule=CPU'
 '--with-arch=CPU'
@@ -1012,6 +1061,22 @@ option.
      default ISA for floating-point arithmetics.  You can select either
      'sse' which enables '-msse2' or 'avx' which enables '-mavx' by
      default.  This option is only supported on i386 and x86-64 targets.
+
+'--with-nan=ENCODING'
+     On MIPS targets, set the default encoding convention to use for the
+     special not-a-number (NaN) IEEE 754 floating-point data.  The
+     possibilities for ENCODING are:
+     'legacy'
+          Use the legacy encoding, as with the '-mnan=legacy'
+          command-line option.
+     '2008'
+          Use the 754-2008 encoding, as with the '-mnan=2008'
+          command-line option.
+     To use this configuration option you must have an assembler version
+     installed that supports the '-mnan=' command-line option too.  In
+     the absence of this configuration option the default convention is
+     the legacy encoding, as when neither of the '-mnan=2008' and
+     '-mnan=legacy' command-line options has been used.
 
 '--with-divide=TYPE'
      Specify how the compiler should generate code for checking for
@@ -1078,6 +1143,12 @@ option.
      the '.init_array' and '.fini_array' sections are supported and, if
      they are, use them.
 
+'--enable-link-mutex'
+     When building GCC, use a mutex to avoid linking the compilers for
+     multiple languages at the same time, to avoid thrashing on build
+     systems with limited free memory.  The default is not to use such a
+     mutex.
+
 '--enable-maintainer-mode'
      The build rules that regenerate the Autoconf and Automake output
      files as well as the GCC master message catalog 'gcc.pot' are
@@ -1122,7 +1193,7 @@ option.
      '--with-gxx-include-dir=DIRNAME'.  Using this option is
      particularly useful if you intend to use several versions of GCC in
      parallel.  This is currently supported by 'libgfortran', 'libjava',
-     'libmudflap', 'libstdc++', and 'libobjc'.
+     'libstdc++', and 'libobjc'.
 
 '--enable-languages=LANG1,LANG2,...'
      Specify that only a particular subset of compilers and their
@@ -1176,6 +1247,10 @@ option.
 '--disable-libgomp'
      Specify that the run-time libraries used by GOMP should not be
      built.
+
+'--disable-libvtv'
+     Specify that the run-time libraries used by vtable verification
+     should not be built.
 
 '--with-dwarf2'
      Specify that the compiler should use DWARF 2 debugging information
@@ -1466,8 +1541,8 @@ option.
 '--disable-gnu-unique-object'
      Tells GCC to use the gnu_unique_object relocation for C++ template
      static data members and inline function local statics.  Enabled by
-     default for a native toolchain with an assembler that accepts it
-     and GLIBC 2.11 or above, otherwise disabled.
+     default for a toolchain with an assembler that accepts it and GLIBC
+     2.11 or above, otherwise disabled.
 
 '--enable-lto'
 '--disable-lto'
@@ -1488,6 +1563,18 @@ option.
      output files, but these changed header paths may conflict with some
      compilation environments.  Enabled by default, and may be disabled
      using '--disable-canonical-system-headers'.
+
+'--with-glibc-version=MAJOR.MINOR'
+     Tell GCC that when the GNU C Library (glibc) is used on the target
+     it will be version MAJOR.MINOR or later.  Normally this can be
+     detected from the C library's header files, but this option may be
+     needed when bootstrapping a cross toolchain without the header
+     files available for building the initial bootstrap compiler.
+
+     If GCC is configured with some multilibs that use glibc and some
+     that do not, this option applies only to the multilibs that use
+     glibc.  However, such configurations may not work well as not all
+     the relevant configuration in GCC is on a per-multilib basis.
 
 Cross-Compiler-Specific Options
 -------------------------------
@@ -1574,6 +1661,11 @@ The following options only apply to building cross compilers.
      RTEMS configurations, which currently use newlib.  The option is
      supported since version 4.7.2 and is the default in 4.8.0 and
      newer.
+
+'--with-nds32-lib=LIBRARY'
+     Specifies that LIBRARY setting is used for building 'libgcc.a'.
+     Currently, the valid LIBRARY is 'newlib' or 'mculib'.  This option
+     is only supported for the NDS32 target.
 
 '--with-build-time-tools=DIR'
      Specifies where to find the set of target tools (assembler, linker,
@@ -2174,9 +2266,7 @@ information collected.
 
    Unlike standard bootstrap, several additional restrictions apply.
 The compiler used to build 'stage1' needs to support a 64-bit integral
-type.  It is recommended to only use GCC for this.  Also parallel make
-is currently not supported since collisions in profile collecting may
-occur.
+type.  It is recommended to only use GCC for this.
 
 
 File: gccinstall.info,  Node: Testing,  Next: Final install,  Prev: Building,  Up: Installing GCC
@@ -2512,10 +2602,6 @@ makers.
    * SCO OpenServer/Unixware.
 
    * Solaris 2 (SPARC, Intel):
-        * Sunfreeware
-
-        * Blastwave
-
         * OpenCSW
 
         * TGCware
@@ -2576,6 +2662,19 @@ amd64-*-solaris2.1[0-9]*
 ========================
 
 This is a synonym for 'x86_64-*-solaris2.1[0-9]*'.
+
+arc-*-elf32
+===========
+
+Use 'configure --target=arc-elf32 --with-cpu=CPU
+--enable-languages="c,c++"' to configure GCC, with CPU being one of
+'arc600', 'arc601', or 'arc700'.
+
+arc-linux-uclibc
+================
+
+Use 'configure --target=arc-linux-uclibc --with-cpu=arc700
+--enable-languages="c,c++"' to configure GCC.
 
 arm-*-eabi
 ==========
@@ -2977,6 +3076,13 @@ is required to build GCC.  For GCC 3.3 and later, this is the default.
 For gcc 3.4.3 and later, '--enable-libunwind-exceptions' is removed and
 the system libunwind library will always be used.
 
+aarch64*-*-*
+============
+
+Binutils pre 2.24 does not have support for selecting '-mabi' and does
+not support ILP32.  If it is used to build GCC 4.9 or later, GCC will
+not support option '-mabi=ilp32'.
+
 *-ibm-aix*
 ==========
 
@@ -3248,6 +3354,22 @@ moxie-*-elf
 
 The moxie processor.
 
+msp430-*-elf
+============
+
+TI MSP430 processor.  This configuration is intended for embedded
+systems.
+
+nds32le-*-elf
+=============
+
+Andes NDS32 target in little endian mode.
+
+nds32be-*-elf
+=============
+
+Andes NDS32 target in big endian mode.
+
 powerpc-*-*
 ===========
 
@@ -3344,8 +3466,10 @@ cross-compilation target only.
 *-*-solaris2*
 =============
 
-Support for Solaris 8 has removed in GCC 4.8.  Support for Solaris 7 has
-been removed in GCC 4.6.
+Support for Solaris 9 has been obsoleted in GCC 4.9, but can still be
+enabled by configuring with '--enable-obsolete'.  Support will be
+removed in GCC 4.10.  Support for Solaris 8 has removed in GCC 4.8.
+Support for Solaris 7 has been removed in GCC 4.6.
 
    Sun does not ship a C compiler with Solaris 2 before Solaris 10,
 though you can download the Sun Studio compilers for free.  In Solaris
@@ -3553,8 +3677,14 @@ newer.
 tilegx-*-linux*
 ===============
 
-The TILE-Gx processor running GNU/Linux.  This port requires
-binutils-2.22 or newer.
+The TILE-Gx processor in little endian mode, running GNU/Linux.  This
+port requires binutils-2.22 or newer.
+
+tilegxbe-*-linux*
+=================
+
+The TILE-Gx processor in big endian mode, running GNU/Linux.  This port
+requires binutils-2.23 or newer.
 
 tilepro-*-linux*
 ================
@@ -4417,7 +4547,7 @@ Concept Index
 * Menu:
 
 * Binaries:                              Binaries.           (line    6)
-* 'build_configargs':                    Configuration.      (line 1423)
+* 'build_configargs':                    Configuration.      (line 1492)
 * Configuration:                         Configuration.      (line    6)
 * configurations supported by GCC:       Configurations.     (line    6)
 * Downloading GCC:                       Downloading the source.
@@ -4427,7 +4557,7 @@ Concept Index
 * FDL, GNU Free Documentation License:   GNU Free Documentation License.
                                                              (line    6)
 * Host specific installation:            Specific.           (line    6)
-* 'host_configargs':                     Configuration.      (line 1427)
+* 'host_configargs':                     Configuration.      (line 1496)
 * Installing GCC: Binaries:              Binaries.           (line    6)
 * Installing GCC: Building:              Building.           (line    6)
 * Installing GCC: Configuration:         Configuration.      (line    6)
@@ -4437,7 +4567,7 @@ Concept Index
 * Specific installation notes:           Specific.           (line    6)
 * Target specific installation:          Specific.           (line    6)
 * Target specific installation notes:    Specific.           (line    6)
-* 'target_configargs':                   Configuration.      (line 1431)
+* 'target_configargs':                   Configuration.      (line 1500)
 * Testing:                               Testing.            (line    6)
 * Testsuite:                             Testing.            (line    6)
 
@@ -4447,19 +4577,97 @@ Tag Table:
 Node: Top1696
 Node: Installing GCC2254
 Node: Prerequisites3888
-Node: Downloading the source14228
-Node: Configuration15778
-Ref: with-gnu-as30793
-Ref: with-as31688
-Ref: with-gnu-ld33101
-Node: Building80011
-Node: Testing95478
-Node: Final install103340
-Node: Binaries108651
-Node: Specific110159
-Node: Old161308
-Node: Configurations164441
-Node: GNU Free Documentation License167979
-Node: Concept Index193107
+Node: Downloading the source15564
+Node: Configuration17114
+Ref: with-gnu-as32585
+Ref: with-as33480
+Ref: with-gnu-ld34893
+Node: Building84585
+Node: Testing99955
+Node: Final install107817
+Node: Binaries113128
+Node: Specific114592
+Ref: alpha-x-x115099
+Ref: alpha-dec-osf51115588
+Ref: amd64-x-solaris210116113
+Ref: arc-x-elf32116216
+Ref: arc-linux-uclibc116392
+Ref: arm-x-eabi116533
+Ref: avr116744
+Ref: bfin117383
+Ref: cr16117624
+Ref: cris118040
+Ref: dos118855
+Ref: epiphany-x-elf119178
+Ref: x-x-freebsd119283
+Ref: h8300-hms121119
+Ref: hppa-hp-hpux121471
+Ref: hppa-hp-hpux10123843
+Ref: hppa-hp-hpux11124256
+Ref: x-x-linux-gnu129915
+Ref: ix86-x-linux130108
+Ref: ix86-x-solaris29130421
+Ref: ix86-x-solaris210131200
+Ref: ia64-x-linux132391
+Ref: ia64-x-hpux133161
+Ref: aarch64-x-x133716
+Ref: x-ibm-aix133919
+Ref: iq2000-x-elf140782
+Ref: lm32-x-elf140922
+Ref: lm32-x-uclinux141026
+Ref: m32c-x-elf141154
+Ref: m32r-x-elf141256
+Ref: m68k-x-x141358
+Ref: m68k-x-uclinux142396
+Ref: mep-x-elf142641
+Ref: microblaze-x-elf142751
+Ref: mips-x-x142870
+Ref: mips-sgi-irix5145264
+Ref: mips-sgi-irix6145344
+Ref: moxie-x-elf145531
+Ref: msp430-x-elf145578
+Ref: nds32le-x-elf145681
+Ref: nds32be-x-elf145753
+Ref: powerpc-x-x145822
+Ref: powerpc-x-darwin146027
+Ref: powerpc-x-elf146521
+Ref: powerpc-x-linux-gnu146606
+Ref: powerpc-x-netbsd146701
+Ref: powerpc-x-eabisim146789
+Ref: powerpc-x-eabi146915
+Ref: powerpcle-x-elf146991
+Ref: powerpcle-x-eabisim147083
+Ref: powerpcle-x-eabi147216
+Ref: rl78-x-elf147299
+Ref: rx-x-elf147405
+Ref: s390-x-linux147604
+Ref: s390x-x-linux147676
+Ref: s390x-ibm-tpf147763
+Ref: x-x-solaris2147894
+Ref: sparc-x-x152815
+Ref: sparc-sun-solaris2153317
+Ref: sparc-sun-solaris210156070
+Ref: sparc-x-linux156445
+Ref: sparc64-x-solaris2156670
+Ref: sparcv9-x-solaris2157323
+Ref: c6x-x-x157410
+Ref: tilegx-*-linux157502
+Ref: tilegxbe-*-linux157644
+Ref: tilepro-*-linux157787
+Ref: x-x-vxworks157908
+Ref: x86-64-x-x159431
+Ref: x86-64-x-solaris210159759
+Ref: xtensa-x-elf160421
+Ref: xtensa-x-linux161092
+Ref: windows161433
+Ref: x-x-cygwin163366
+Ref: x-x-interix163919
+Ref: x-x-mingw32164227
+Ref: older164453
+Ref: elf166570
+Node: Old166828
+Node: Configurations169961
+Node: GNU Free Documentation License173499
+Node: Concept Index198627
 
 End Tag Table

@@ -5,10 +5,10 @@
 # It is necessary for linking the library.
 
 # The name that we can dlopen(3).
-dlname='libasan.so.0'
+dlname='libasan.so.1'
 
 # Names of this library.
-library_names='libasan.so.0.0.0 libasan.so.0 libasan.so'
+library_names='libasan.so.1.0.0 libasan.so.1 libasan.so'
 
 # The name of the static archive.
 old_library='libasan.a'
@@ -17,13 +17,13 @@ old_library='libasan.a'
 inherited_linker_flags=''
 
 # Libraries that this one depends upon.
-dependency_libs=' -lpthread -ldl '/home/pinkflozd/tool/lib/ct-ng-linaro-1.13.1+bzr2650/builds/arm-cortex_a7-linux-gnueabihf/arm-cortex_a7-linux-gnueabihf/lib'/libstdc++.la -lm'
+dependency_libs=' -lpthread -ldl '/home/pinkflozd/android/toolchain/lib/ct-ng-linaro-1.13.1+bzr2689/builds/arm-cortex_a7-linux-gnueabihf/arm-cortex_a7-linux-gnueabihf/lib'/libstdc++.la -lm'
 
 # Names of additional weak libraries provided by this library
 weak_library_names=''
 
 # Version information for libasan.
-current=0
+current=1
 age=0
 revision=0
 
@@ -38,4 +38,4 @@ dlopen=''
 dlpreopen=''
 
 # Directory that this library needs to be installed in:
-libdir='/home/pinkflozd/tool/lib/ct-ng-linaro-1.13.1+bzr2650/builds/arm-cortex_a7-linux-gnueabihf/arm-cortex_a7-linux-gnueabihf/lib'
+libdir='/home/pinkflozd/android/toolchain/lib/ct-ng-linaro-1.13.1+bzr2689/builds/arm-cortex_a7-linux-gnueabihf/arm-cortex_a7-linux-gnueabihf/lib'
