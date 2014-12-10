@@ -17,7 +17,7 @@ old_library='libasan.a'
 inherited_linker_flags=''
 
 # Libraries that this one depends upon.
-dependency_libs=' -lpthread -ldl '/home/pinkflozd/android/toolchain/lib/ct-ng-linaro-1.13.1+bzr2689/builds/arm-cortex_a7-linux-gnueabihf/arm-cortex_a7-linux-gnueabihf/lib'/libstdc++.la -lm'
+dependency_libs=' -lpthread -ldl '/home/pinkflozd/android/crosstool/lib/ct-ng-linaro-1.13.1+bzr/builds/arm-cortex_a7-linux-gnueabihf/arm-cortex_a7-linux-gnueabihf/lib'/libstdc++.la -lm'
 
 # Names of additional weak libraries provided by this library
 weak_library_names=''
@@ -38,4 +38,4 @@ dlopen=''
 dlpreopen=''
 
 # Directory that this library needs to be installed in:
-libdir='/home/pinkflozd/android/toolchain/lib/ct-ng-linaro-1.13.1+bzr2689/builds/arm-cortex_a7-linux-gnueabihf/arm-cortex_a7-linux-gnueabihf/lib'
+libdir='/home/pinkflozd/android/crosstool/lib/ct-ng-linaro-1.13.1+bzr/builds/arm-cortex_a7-linux-gnueabihf/arm-cortex_a7-linux-gnueabihf/lib'

@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/usr/sbin/bash
 
 # NON-CONFIGURABLE STUFF!
 export LC_ALL=C
-version="linaro-1.13.1+bzr2689"
+version="linaro-1.13.1+bzr"
 bits="32"
-sed="/bin/sed"
-grep="/bin/grep"
+sed="/usr/sbin/sed"
+grep="/usr/sbin/grep"
 
 my_name="$( basename "${0}" )"
 prefix="${0%-ldd}"
