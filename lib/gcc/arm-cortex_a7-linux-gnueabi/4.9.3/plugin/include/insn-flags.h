@@ -290,18 +290,18 @@
 #define HAVE_fixuns_truncdfsi2 (TARGET_32BIT && TARGET_HARD_FLOAT && TARGET_VFP_DOUBLE)
 #define HAVE_floatunssisf2 (TARGET_32BIT && TARGET_HARD_FLOAT && TARGET_VFP)
 #define HAVE_floatunssidf2 (TARGET_32BIT && TARGET_HARD_FLOAT && TARGET_VFP_DOUBLE)
-#define HAVE_btruncsf2 ((TARGET_HARD_FLOAT && TARGET_FPU_ARMV8 ) && (TARGET_VFP))
-#define HAVE_ceilsf2 ((TARGET_HARD_FLOAT && TARGET_FPU_ARMV8 ) && (TARGET_VFP))
-#define HAVE_floorsf2 ((TARGET_HARD_FLOAT && TARGET_FPU_ARMV8 ) && (TARGET_VFP))
-#define HAVE_nearbyintsf2 ((TARGET_HARD_FLOAT && TARGET_FPU_ARMV8 ) && (TARGET_VFP))
-#define HAVE_rintsf2 ((TARGET_HARD_FLOAT && TARGET_FPU_ARMV8 ) && (TARGET_VFP))
-#define HAVE_roundsf2 ((TARGET_HARD_FLOAT && TARGET_FPU_ARMV8 ) && (TARGET_VFP))
-#define HAVE_btruncdf2 ((TARGET_HARD_FLOAT && TARGET_FPU_ARMV8 && TARGET_VFP_DOUBLE) && (TARGET_VFP_DOUBLE))
-#define HAVE_ceildf2 ((TARGET_HARD_FLOAT && TARGET_FPU_ARMV8 && TARGET_VFP_DOUBLE) && (TARGET_VFP_DOUBLE))
-#define HAVE_floordf2 ((TARGET_HARD_FLOAT && TARGET_FPU_ARMV8 && TARGET_VFP_DOUBLE) && (TARGET_VFP_DOUBLE))
-#define HAVE_nearbyintdf2 ((TARGET_HARD_FLOAT && TARGET_FPU_ARMV8 && TARGET_VFP_DOUBLE) && (TARGET_VFP_DOUBLE))
-#define HAVE_rintdf2 ((TARGET_HARD_FLOAT && TARGET_FPU_ARMV8 && TARGET_VFP_DOUBLE) && (TARGET_VFP_DOUBLE))
-#define HAVE_rounddf2 ((TARGET_HARD_FLOAT && TARGET_FPU_ARMV8 && TARGET_VFP_DOUBLE) && (TARGET_VFP_DOUBLE))
+#define HAVE_btruncsf2 ((TARGET_HARD_FLOAT && TARGET_VFP5 ) && (TARGET_VFP))
+#define HAVE_ceilsf2 ((TARGET_HARD_FLOAT && TARGET_VFP5 ) && (TARGET_VFP))
+#define HAVE_floorsf2 ((TARGET_HARD_FLOAT && TARGET_VFP5 ) && (TARGET_VFP))
+#define HAVE_nearbyintsf2 ((TARGET_HARD_FLOAT && TARGET_VFP5 ) && (TARGET_VFP))
+#define HAVE_rintsf2 ((TARGET_HARD_FLOAT && TARGET_VFP5 ) && (TARGET_VFP))
+#define HAVE_roundsf2 ((TARGET_HARD_FLOAT && TARGET_VFP5 ) && (TARGET_VFP))
+#define HAVE_btruncdf2 ((TARGET_HARD_FLOAT && TARGET_VFP5 && TARGET_VFP_DOUBLE) && (TARGET_VFP_DOUBLE))
+#define HAVE_ceildf2 ((TARGET_HARD_FLOAT && TARGET_VFP5 && TARGET_VFP_DOUBLE) && (TARGET_VFP_DOUBLE))
+#define HAVE_floordf2 ((TARGET_HARD_FLOAT && TARGET_VFP5 && TARGET_VFP_DOUBLE) && (TARGET_VFP_DOUBLE))
+#define HAVE_nearbyintdf2 ((TARGET_HARD_FLOAT && TARGET_VFP5 && TARGET_VFP_DOUBLE) && (TARGET_VFP_DOUBLE))
+#define HAVE_rintdf2 ((TARGET_HARD_FLOAT && TARGET_VFP5 && TARGET_VFP_DOUBLE) && (TARGET_VFP_DOUBLE))
+#define HAVE_rounddf2 ((TARGET_HARD_FLOAT && TARGET_VFP5 && TARGET_VFP_DOUBLE) && (TARGET_VFP_DOUBLE))
 #define HAVE_lceilsfsi2 ((TARGET_HARD_FLOAT && TARGET_FPU_ARMV8 ) && (TARGET_VFP))
 #define HAVE_lfloorsfsi2 ((TARGET_HARD_FLOAT && TARGET_FPU_ARMV8 ) && (TARGET_VFP))
 #define HAVE_lroundsfsi2 ((TARGET_HARD_FLOAT && TARGET_FPU_ARMV8 ) && (TARGET_VFP))
@@ -314,10 +314,10 @@
 #define HAVE_lceiludfsi2 ((TARGET_HARD_FLOAT && TARGET_FPU_ARMV8 && TARGET_VFP_DOUBLE) && (TARGET_VFP_DOUBLE))
 #define HAVE_lfloorudfsi2 ((TARGET_HARD_FLOAT && TARGET_FPU_ARMV8 && TARGET_VFP_DOUBLE) && (TARGET_VFP_DOUBLE))
 #define HAVE_lroundudfsi2 ((TARGET_HARD_FLOAT && TARGET_FPU_ARMV8 && TARGET_VFP_DOUBLE) && (TARGET_VFP_DOUBLE))
-#define HAVE_smaxsf3 ((TARGET_HARD_FLOAT && TARGET_FPU_ARMV8 ) && (TARGET_VFP))
-#define HAVE_smaxdf3 ((TARGET_HARD_FLOAT && TARGET_FPU_ARMV8 && TARGET_VFP_DOUBLE) && (TARGET_VFP_DOUBLE))
-#define HAVE_sminsf3 ((TARGET_HARD_FLOAT && TARGET_FPU_ARMV8 ) && (TARGET_VFP))
-#define HAVE_smindf3 ((TARGET_HARD_FLOAT && TARGET_FPU_ARMV8 && TARGET_VFP_DOUBLE) && (TARGET_VFP_DOUBLE))
+#define HAVE_smaxsf3 ((TARGET_HARD_FLOAT && TARGET_VFP5 ) && (TARGET_VFP))
+#define HAVE_smaxdf3 ((TARGET_HARD_FLOAT && TARGET_VFP5 && TARGET_VFP_DOUBLE) && (TARGET_VFP_DOUBLE))
+#define HAVE_sminsf3 ((TARGET_HARD_FLOAT && TARGET_VFP5 ) && (TARGET_VFP))
+#define HAVE_smindf3 ((TARGET_HARD_FLOAT && TARGET_VFP5 && TARGET_VFP_DOUBLE) && (TARGET_VFP_DOUBLE))
 #define HAVE_set_fpscr (TARGET_VFP && TARGET_HARD_FLOAT)
 #define HAVE_get_fpscr (TARGET_VFP && TARGET_HARD_FLOAT)
 #define HAVE_tls_load_dot_plus_four (TARGET_THUMB2)
@@ -534,7 +534,7 @@
 #define HAVE_quad_halves_smaxv16qi (TARGET_NEON)
 #define HAVE_quad_halves_uminv16qi (TARGET_NEON)
 #define HAVE_quad_halves_umaxv16qi (TARGET_NEON)
-#define HAVE_reduc_splus_v2di (TARGET_NEON && !BYTES_BIG_ENDIAN)
+#define HAVE_arm_reduc_plus_internal_v2di (TARGET_NEON && !BYTES_BIG_ENDIAN)
 #define HAVE_neon_vpadd_internalv8qi (TARGET_NEON)
 #define HAVE_neon_vpadd_internalv4hi (TARGET_NEON)
 #define HAVE_neon_vpadd_internalv2si (TARGET_NEON)
@@ -1892,61 +1892,55 @@
 #define HAVE_move_lo_quad_v8hi (TARGET_NEON)
 #define HAVE_move_lo_quad_v4si (TARGET_NEON)
 #define HAVE_move_lo_quad_v4sf (TARGET_NEON)
-#define HAVE_reduc_splus_v8qi (TARGET_NEON && (!false || flag_unsafe_math_optimizations))
-#define HAVE_reduc_splus_v4hi (TARGET_NEON && (!false || flag_unsafe_math_optimizations))
-#define HAVE_reduc_splus_v2si (TARGET_NEON && (!false || flag_unsafe_math_optimizations))
-#define HAVE_reduc_splus_v2sf (TARGET_NEON && (!true || flag_unsafe_math_optimizations))
-#define HAVE_reduc_splus_v16qi (TARGET_NEON && (!false || flag_unsafe_math_optimizations) \
+#define HAVE_reduc_plus_scal_v8qi (TARGET_NEON && (!false || flag_unsafe_math_optimizations))
+#define HAVE_reduc_plus_scal_v4hi (TARGET_NEON && (!false || flag_unsafe_math_optimizations))
+#define HAVE_reduc_plus_scal_v2si (TARGET_NEON && (!false || flag_unsafe_math_optimizations))
+#define HAVE_reduc_plus_scal_v2sf (TARGET_NEON && (!true || flag_unsafe_math_optimizations))
+#define HAVE_reduc_plus_scal_v16qi (TARGET_NEON && (!false || flag_unsafe_math_optimizations) \
    && !BYTES_BIG_ENDIAN)
-#define HAVE_reduc_splus_v8hi (TARGET_NEON && (!false || flag_unsafe_math_optimizations) \
+#define HAVE_reduc_plus_scal_v8hi (TARGET_NEON && (!false || flag_unsafe_math_optimizations) \
    && !BYTES_BIG_ENDIAN)
-#define HAVE_reduc_splus_v4si (TARGET_NEON && (!false || flag_unsafe_math_optimizations) \
+#define HAVE_reduc_plus_scal_v4si (TARGET_NEON && (!false || flag_unsafe_math_optimizations) \
    && !BYTES_BIG_ENDIAN)
-#define HAVE_reduc_splus_v4sf (TARGET_NEON && (!true || flag_unsafe_math_optimizations) \
+#define HAVE_reduc_plus_scal_v4sf (TARGET_NEON && (!true || flag_unsafe_math_optimizations) \
    && !BYTES_BIG_ENDIAN)
-#define HAVE_reduc_uplus_v8qi (TARGET_NEON && (true || !BYTES_BIG_ENDIAN))
-#define HAVE_reduc_uplus_v16qi (TARGET_NEON && (false || !BYTES_BIG_ENDIAN))
-#define HAVE_reduc_uplus_v4hi (TARGET_NEON && (true || !BYTES_BIG_ENDIAN))
-#define HAVE_reduc_uplus_v8hi (TARGET_NEON && (false || !BYTES_BIG_ENDIAN))
-#define HAVE_reduc_uplus_v2si (TARGET_NEON && (true || !BYTES_BIG_ENDIAN))
-#define HAVE_reduc_uplus_v4si (TARGET_NEON && (false || !BYTES_BIG_ENDIAN))
-#define HAVE_reduc_uplus_v2di (TARGET_NEON && (false || !BYTES_BIG_ENDIAN))
-#define HAVE_reduc_smin_v8qi (TARGET_NEON && (!false || flag_unsafe_math_optimizations))
-#define HAVE_reduc_smin_v4hi (TARGET_NEON && (!false || flag_unsafe_math_optimizations))
-#define HAVE_reduc_smin_v2si (TARGET_NEON && (!false || flag_unsafe_math_optimizations))
-#define HAVE_reduc_smin_v2sf (TARGET_NEON && (!true || flag_unsafe_math_optimizations))
-#define HAVE_reduc_smin_v16qi (TARGET_NEON && (!false || flag_unsafe_math_optimizations) \
+#define HAVE_reduc_plus_scal_v2di (TARGET_NEON && !BYTES_BIG_ENDIAN)
+#define HAVE_reduc_smin_scal_v8qi (TARGET_NEON && (!false || flag_unsafe_math_optimizations))
+#define HAVE_reduc_smin_scal_v4hi (TARGET_NEON && (!false || flag_unsafe_math_optimizations))
+#define HAVE_reduc_smin_scal_v2si (TARGET_NEON && (!false || flag_unsafe_math_optimizations))
+#define HAVE_reduc_smin_scal_v2sf (TARGET_NEON && (!true || flag_unsafe_math_optimizations))
+#define HAVE_reduc_smin_scal_v16qi (TARGET_NEON && (!false || flag_unsafe_math_optimizations) \
    && !BYTES_BIG_ENDIAN)
-#define HAVE_reduc_smin_v8hi (TARGET_NEON && (!false || flag_unsafe_math_optimizations) \
+#define HAVE_reduc_smin_scal_v8hi (TARGET_NEON && (!false || flag_unsafe_math_optimizations) \
    && !BYTES_BIG_ENDIAN)
-#define HAVE_reduc_smin_v4si (TARGET_NEON && (!false || flag_unsafe_math_optimizations) \
+#define HAVE_reduc_smin_scal_v4si (TARGET_NEON && (!false || flag_unsafe_math_optimizations) \
    && !BYTES_BIG_ENDIAN)
-#define HAVE_reduc_smin_v4sf (TARGET_NEON && (!true || flag_unsafe_math_optimizations) \
+#define HAVE_reduc_smin_scal_v4sf (TARGET_NEON && (!true || flag_unsafe_math_optimizations) \
    && !BYTES_BIG_ENDIAN)
-#define HAVE_reduc_smax_v8qi (TARGET_NEON && (!false || flag_unsafe_math_optimizations))
-#define HAVE_reduc_smax_v4hi (TARGET_NEON && (!false || flag_unsafe_math_optimizations))
-#define HAVE_reduc_smax_v2si (TARGET_NEON && (!false || flag_unsafe_math_optimizations))
-#define HAVE_reduc_smax_v2sf (TARGET_NEON && (!true || flag_unsafe_math_optimizations))
-#define HAVE_reduc_smax_v16qi (TARGET_NEON && (!false || flag_unsafe_math_optimizations) \
+#define HAVE_reduc_smax_scal_v8qi (TARGET_NEON && (!false || flag_unsafe_math_optimizations))
+#define HAVE_reduc_smax_scal_v4hi (TARGET_NEON && (!false || flag_unsafe_math_optimizations))
+#define HAVE_reduc_smax_scal_v2si (TARGET_NEON && (!false || flag_unsafe_math_optimizations))
+#define HAVE_reduc_smax_scal_v2sf (TARGET_NEON && (!true || flag_unsafe_math_optimizations))
+#define HAVE_reduc_smax_scal_v16qi (TARGET_NEON && (!false || flag_unsafe_math_optimizations) \
    && !BYTES_BIG_ENDIAN)
-#define HAVE_reduc_smax_v8hi (TARGET_NEON && (!false || flag_unsafe_math_optimizations) \
+#define HAVE_reduc_smax_scal_v8hi (TARGET_NEON && (!false || flag_unsafe_math_optimizations) \
    && !BYTES_BIG_ENDIAN)
-#define HAVE_reduc_smax_v4si (TARGET_NEON && (!false || flag_unsafe_math_optimizations) \
+#define HAVE_reduc_smax_scal_v4si (TARGET_NEON && (!false || flag_unsafe_math_optimizations) \
    && !BYTES_BIG_ENDIAN)
-#define HAVE_reduc_smax_v4sf (TARGET_NEON && (!true || flag_unsafe_math_optimizations) \
+#define HAVE_reduc_smax_scal_v4sf (TARGET_NEON && (!true || flag_unsafe_math_optimizations) \
    && !BYTES_BIG_ENDIAN)
-#define HAVE_reduc_umin_v8qi (TARGET_NEON)
-#define HAVE_reduc_umin_v4hi (TARGET_NEON)
-#define HAVE_reduc_umin_v2si (TARGET_NEON)
-#define HAVE_reduc_umin_v16qi (TARGET_NEON && !BYTES_BIG_ENDIAN)
-#define HAVE_reduc_umin_v8hi (TARGET_NEON && !BYTES_BIG_ENDIAN)
-#define HAVE_reduc_umin_v4si (TARGET_NEON && !BYTES_BIG_ENDIAN)
-#define HAVE_reduc_umax_v8qi (TARGET_NEON)
-#define HAVE_reduc_umax_v4hi (TARGET_NEON)
-#define HAVE_reduc_umax_v2si (TARGET_NEON)
-#define HAVE_reduc_umax_v16qi (TARGET_NEON && !BYTES_BIG_ENDIAN)
-#define HAVE_reduc_umax_v8hi (TARGET_NEON && !BYTES_BIG_ENDIAN)
-#define HAVE_reduc_umax_v4si (TARGET_NEON && !BYTES_BIG_ENDIAN)
+#define HAVE_reduc_umin_scal_v8qi (TARGET_NEON)
+#define HAVE_reduc_umin_scal_v4hi (TARGET_NEON)
+#define HAVE_reduc_umin_scal_v2si (TARGET_NEON)
+#define HAVE_reduc_umin_scal_v16qi (TARGET_NEON && !BYTES_BIG_ENDIAN)
+#define HAVE_reduc_umin_scal_v8hi (TARGET_NEON && !BYTES_BIG_ENDIAN)
+#define HAVE_reduc_umin_scal_v4si (TARGET_NEON && !BYTES_BIG_ENDIAN)
+#define HAVE_reduc_umax_scal_v8qi (TARGET_NEON)
+#define HAVE_reduc_umax_scal_v4hi (TARGET_NEON)
+#define HAVE_reduc_umax_scal_v2si (TARGET_NEON)
+#define HAVE_reduc_umax_scal_v16qi (TARGET_NEON && !BYTES_BIG_ENDIAN)
+#define HAVE_reduc_umax_scal_v8hi (TARGET_NEON && !BYTES_BIG_ENDIAN)
+#define HAVE_reduc_umax_scal_v4si (TARGET_NEON && !BYTES_BIG_ENDIAN)
 #define HAVE_vcondv8qiv8qi (TARGET_NEON && (!false || flag_unsafe_math_optimizations))
 #define HAVE_vcondv16qiv16qi (TARGET_NEON && (!false || flag_unsafe_math_optimizations))
 #define HAVE_vcondv4hiv4hi (TARGET_NEON && (!false || flag_unsafe_math_optimizations))
@@ -2906,7 +2900,7 @@ extern rtx        gen_quad_halves_sminv16qi             (rtx, rtx);
 extern rtx        gen_quad_halves_smaxv16qi             (rtx, rtx);
 extern rtx        gen_quad_halves_uminv16qi             (rtx, rtx);
 extern rtx        gen_quad_halves_umaxv16qi             (rtx, rtx);
-extern rtx        gen_reduc_splus_v2di                  (rtx, rtx);
+extern rtx        gen_arm_reduc_plus_internal_v2di      (rtx, rtx);
 extern rtx        gen_neon_vpadd_internalv8qi           (rtx, rtx, rtx);
 extern rtx        gen_neon_vpadd_internalv4hi           (rtx, rtx, rtx);
 extern rtx        gen_neon_vpadd_internalv2si           (rtx, rtx, rtx);
@@ -4127,49 +4121,43 @@ extern rtx        gen_move_lo_quad_v16qi                (rtx, rtx);
 extern rtx        gen_move_lo_quad_v8hi                 (rtx, rtx);
 extern rtx        gen_move_lo_quad_v4si                 (rtx, rtx);
 extern rtx        gen_move_lo_quad_v4sf                 (rtx, rtx);
-extern rtx        gen_reduc_splus_v8qi                  (rtx, rtx);
-extern rtx        gen_reduc_splus_v4hi                  (rtx, rtx);
-extern rtx        gen_reduc_splus_v2si                  (rtx, rtx);
-extern rtx        gen_reduc_splus_v2sf                  (rtx, rtx);
-extern rtx        gen_reduc_splus_v16qi                 (rtx, rtx);
-extern rtx        gen_reduc_splus_v8hi                  (rtx, rtx);
-extern rtx        gen_reduc_splus_v4si                  (rtx, rtx);
-extern rtx        gen_reduc_splus_v4sf                  (rtx, rtx);
-extern rtx        gen_reduc_uplus_v8qi                  (rtx, rtx);
-extern rtx        gen_reduc_uplus_v16qi                 (rtx, rtx);
-extern rtx        gen_reduc_uplus_v4hi                  (rtx, rtx);
-extern rtx        gen_reduc_uplus_v8hi                  (rtx, rtx);
-extern rtx        gen_reduc_uplus_v2si                  (rtx, rtx);
-extern rtx        gen_reduc_uplus_v4si                  (rtx, rtx);
-extern rtx        gen_reduc_uplus_v2di                  (rtx, rtx);
-extern rtx        gen_reduc_smin_v8qi                   (rtx, rtx);
-extern rtx        gen_reduc_smin_v4hi                   (rtx, rtx);
-extern rtx        gen_reduc_smin_v2si                   (rtx, rtx);
-extern rtx        gen_reduc_smin_v2sf                   (rtx, rtx);
-extern rtx        gen_reduc_smin_v16qi                  (rtx, rtx);
-extern rtx        gen_reduc_smin_v8hi                   (rtx, rtx);
-extern rtx        gen_reduc_smin_v4si                   (rtx, rtx);
-extern rtx        gen_reduc_smin_v4sf                   (rtx, rtx);
-extern rtx        gen_reduc_smax_v8qi                   (rtx, rtx);
-extern rtx        gen_reduc_smax_v4hi                   (rtx, rtx);
-extern rtx        gen_reduc_smax_v2si                   (rtx, rtx);
-extern rtx        gen_reduc_smax_v2sf                   (rtx, rtx);
-extern rtx        gen_reduc_smax_v16qi                  (rtx, rtx);
-extern rtx        gen_reduc_smax_v8hi                   (rtx, rtx);
-extern rtx        gen_reduc_smax_v4si                   (rtx, rtx);
-extern rtx        gen_reduc_smax_v4sf                   (rtx, rtx);
-extern rtx        gen_reduc_umin_v8qi                   (rtx, rtx);
-extern rtx        gen_reduc_umin_v4hi                   (rtx, rtx);
-extern rtx        gen_reduc_umin_v2si                   (rtx, rtx);
-extern rtx        gen_reduc_umin_v16qi                  (rtx, rtx);
-extern rtx        gen_reduc_umin_v8hi                   (rtx, rtx);
-extern rtx        gen_reduc_umin_v4si                   (rtx, rtx);
-extern rtx        gen_reduc_umax_v8qi                   (rtx, rtx);
-extern rtx        gen_reduc_umax_v4hi                   (rtx, rtx);
-extern rtx        gen_reduc_umax_v2si                   (rtx, rtx);
-extern rtx        gen_reduc_umax_v16qi                  (rtx, rtx);
-extern rtx        gen_reduc_umax_v8hi                   (rtx, rtx);
-extern rtx        gen_reduc_umax_v4si                   (rtx, rtx);
+extern rtx        gen_reduc_plus_scal_v8qi              (rtx, rtx);
+extern rtx        gen_reduc_plus_scal_v4hi              (rtx, rtx);
+extern rtx        gen_reduc_plus_scal_v2si              (rtx, rtx);
+extern rtx        gen_reduc_plus_scal_v2sf              (rtx, rtx);
+extern rtx        gen_reduc_plus_scal_v16qi             (rtx, rtx);
+extern rtx        gen_reduc_plus_scal_v8hi              (rtx, rtx);
+extern rtx        gen_reduc_plus_scal_v4si              (rtx, rtx);
+extern rtx        gen_reduc_plus_scal_v4sf              (rtx, rtx);
+extern rtx        gen_reduc_plus_scal_v2di              (rtx, rtx);
+extern rtx        gen_reduc_smin_scal_v8qi              (rtx, rtx);
+extern rtx        gen_reduc_smin_scal_v4hi              (rtx, rtx);
+extern rtx        gen_reduc_smin_scal_v2si              (rtx, rtx);
+extern rtx        gen_reduc_smin_scal_v2sf              (rtx, rtx);
+extern rtx        gen_reduc_smin_scal_v16qi             (rtx, rtx);
+extern rtx        gen_reduc_smin_scal_v8hi              (rtx, rtx);
+extern rtx        gen_reduc_smin_scal_v4si              (rtx, rtx);
+extern rtx        gen_reduc_smin_scal_v4sf              (rtx, rtx);
+extern rtx        gen_reduc_smax_scal_v8qi              (rtx, rtx);
+extern rtx        gen_reduc_smax_scal_v4hi              (rtx, rtx);
+extern rtx        gen_reduc_smax_scal_v2si              (rtx, rtx);
+extern rtx        gen_reduc_smax_scal_v2sf              (rtx, rtx);
+extern rtx        gen_reduc_smax_scal_v16qi             (rtx, rtx);
+extern rtx        gen_reduc_smax_scal_v8hi              (rtx, rtx);
+extern rtx        gen_reduc_smax_scal_v4si              (rtx, rtx);
+extern rtx        gen_reduc_smax_scal_v4sf              (rtx, rtx);
+extern rtx        gen_reduc_umin_scal_v8qi              (rtx, rtx);
+extern rtx        gen_reduc_umin_scal_v4hi              (rtx, rtx);
+extern rtx        gen_reduc_umin_scal_v2si              (rtx, rtx);
+extern rtx        gen_reduc_umin_scal_v16qi             (rtx, rtx);
+extern rtx        gen_reduc_umin_scal_v8hi              (rtx, rtx);
+extern rtx        gen_reduc_umin_scal_v4si              (rtx, rtx);
+extern rtx        gen_reduc_umax_scal_v8qi              (rtx, rtx);
+extern rtx        gen_reduc_umax_scal_v4hi              (rtx, rtx);
+extern rtx        gen_reduc_umax_scal_v2si              (rtx, rtx);
+extern rtx        gen_reduc_umax_scal_v16qi             (rtx, rtx);
+extern rtx        gen_reduc_umax_scal_v8hi              (rtx, rtx);
+extern rtx        gen_reduc_umax_scal_v4si              (rtx, rtx);
 extern rtx        gen_vcondv8qiv8qi                     (rtx, rtx, rtx, rtx, rtx, rtx);
 extern rtx        gen_vcondv16qiv16qi                   (rtx, rtx, rtx, rtx, rtx, rtx);
 extern rtx        gen_vcondv4hiv4hi                     (rtx, rtx, rtx, rtx, rtx, rtx);

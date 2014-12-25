@@ -4,8 +4,8 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "4.9.3 20141031 (prerelease)")
-(!srcdir  "/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc")
+(!version  "4.9.3 20141205 (prerelease)")
+(!srcdir  "/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc")
 (!languages 9 ada c cp fortran go java lto objc objcp)
 (!fileslist 195
  (!srcfile 511  "../libcpp/include/line-map.h")
@@ -315,11 +315,11 @@
               (!srcfileloc  "tree-core.h" 729)
               nil )
              (!pair  "u"
-              (!type union 12 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/tree-core.h:731"
+              (!type union 12 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/tree-core.h:731"
                (!srcfileloc  "tree-core.h" 765)
                (!fields 3 
                 (!pair  "bits"
-                 (!type struct 13 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/tree-core.h:734"
+                 (!type struct 13 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/tree-core.h:734"
                   (!srcfileloc  "tree-core.h" 757)
                   (!fields 16 
                    (!pair  "lang_flag_0"
@@ -5092,47 +5092,47 @@
                             (!type struct 255 
                              (!type already_seen 254)
                              gc_pointed_to "constant_descriptor_rtx"
-                             (!srcfileloc  "varasm.c" 3493)
+                             (!srcfileloc  "varasm.c" 3487)
                              (!fields 10 
                               (!pair  "next"
                                (!type already_seen 254)
-                               (!srcfileloc  "varasm.c" 3483)
+                               (!srcfileloc  "varasm.c" 3477)
                                nil )
                               (!pair  "mem"
                                (!type already_seen 136)
-                               (!srcfileloc  "varasm.c" 3484)
+                               (!srcfileloc  "varasm.c" 3478)
                                nil )
                               (!pair  "sym"
                                (!type already_seen 136)
-                               (!srcfileloc  "varasm.c" 3485)
+                               (!srcfileloc  "varasm.c" 3479)
                                nil )
                               (!pair  "constant"
                                (!type already_seen 136)
-                               (!srcfileloc  "varasm.c" 3486)
+                               (!srcfileloc  "varasm.c" 3480)
                                nil )
                               (!pair  "offset"
                                (!type already_seen 9)
-                               (!srcfileloc  "varasm.c" 3487)
+                               (!srcfileloc  "varasm.c" 3481)
                                nil )
                               (!pair  "hash"
                                (!type already_seen 9)
-                               (!srcfileloc  "varasm.c" 3488)
+                               (!srcfileloc  "varasm.c" 3482)
                                nil )
                               (!pair  "mode"
                                (!type already_seen 9)
-                               (!srcfileloc  "varasm.c" 3489)
+                               (!srcfileloc  "varasm.c" 3483)
                                nil )
                               (!pair  "align"
                                (!type already_seen 9)
-                               (!srcfileloc  "varasm.c" 3490)
+                               (!srcfileloc  "varasm.c" 3484)
                                nil )
                               (!pair  "labelno"
                                (!type already_seen 9)
-                               (!srcfileloc  "varasm.c" 3491)
+                               (!srcfileloc  "varasm.c" 3485)
                                nil )
                               (!pair  "mark"
                                (!type already_seen 9)
-                               (!srcfileloc  "varasm.c" 3492)
+                               (!srcfileloc  "varasm.c" 3486)
                                nil )
                              )
                              (!options 
@@ -6617,7 +6617,7 @@
                                )
                               )
                               (!pair  "x"
-                               (!type struct 321 nil  gc_used "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/basic-block.h:187"
+                               (!type struct 321 nil  gc_used "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/basic-block.h:187"
                                 (!srcfileloc  "basic-block.h" 190)
                                 (!fields 2 
                                  (!pair  "head_"
@@ -8592,7 +8592,7 @@
                               (!srcfileloc  "dwarf2out.h" 55)
                               nil )
                              (!pair  "dw_cfi_oprnd1"
-                              (!type union 413 nil  gc_used "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/dwarf2out.h:47"
+                              (!type union 413 nil  gc_used "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/dwarf2out.h:47"
                                (!srcfileloc  "dwarf2out.h" 52)
                                (!fields 4 
                                 (!pair  "dw_cfi_reg_num"
@@ -10901,7 +10901,7 @@
                  )
                 )
                 (!pair  "loc"
-                 (!type union 512 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/tree-core.h:1167"
+                 (!type union 512 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/tree-core.h:1167"
                   (!srcfileloc  "tree-core.h" 1167)
                   (!fields 2 
                    (!pair  "stmt"
@@ -12717,7 +12717,7 @@
                        (!srcfileloc  "c/c-decl.c" 212)
                        (!fields 11 
                         (!pair  "u"
-                         (!type union 585 nil  gc_used "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/c/c-decl.c:198"
+                         (!type union 585 nil  gc_used "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/c/c-decl.c:198"
                           (!srcfileloc  "c/c-decl.c" 201)
                           (!fields 2 
                            (!pair  "type"
@@ -13736,7 +13736,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 644 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/java/expr.c:2060"nil 
+ (!type struct 644 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/java/expr.c:2060"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -13863,11 +13863,11 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 655 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/fortran/trans.h:340"nil 
+ (!type struct 655 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/fortran/trans.h:340"nil 
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 656 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/fortran/trans.h:328"nil 
+ (!type struct 656 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/fortran/trans.h:328"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -13891,7 +13891,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 662 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/fortran/trans.h:33"nil 
+ (!type struct 662 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/fortran/trans.h:33"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -15142,7 +15142,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 759 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/c/c-parser.c:6071"nil 
+ (!type struct 759 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/c/c-parser.c:6071"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -15269,7 +15269,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 768 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/c-family/c-pragma.c:1169"nil 
+ (!type struct 768 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/c-family/c-pragma.c:1169"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -15801,7 +15801,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 828 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/ada/gcc-interface/decl.c:178"nil 
+ (!type struct 828 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/ada/gcc-interface/decl.c:178"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -15984,7 +15984,7 @@
    (!type already_seen 856)
   )
   gc_pointed_to "tree_type_map"
-  (!srcfileloc  "ubsan.c" 56)
+  (!srcfileloc  "ubsan.c" 57)
   (!fields 2 
    (!pair  "type"
     (!type struct 858 nil  gc_used "tree_map_base"
@@ -15996,11 +15996,11 @@
        nil )
      )
      nil 511 nil nil )
-    (!srcfileloc  "ubsan.c" 54)
+    (!srcfileloc  "ubsan.c" 55)
     nil )
    (!pair  "decl"
     (!type already_seen 5)
-    (!srcfileloc  "ubsan.c" 55)
+    (!srcfileloc  "ubsan.c" 56)
     nil )
   )
   nil 511 nil nil )
@@ -17718,7 +17718,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1013 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/config/arm/arm.c:29816"nil 
+ (!type struct 1013 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/config/arm/arm.c:29824"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -17726,7 +17726,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1015 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/config/arm/arm.c:23256"nil 
+ (!type struct 1015 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/config/arm/arm.c:23256"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -17745,11 +17745,11 @@
  
  (!type already_seen 1017)
  
- (!type struct 1018 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/config/arm/arm.c:3097"nil 
+ (!type struct 1018 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/config/arm/arm.c:3097"nil 
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1019 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/config/arm/arm.c:2100"nil 
+ (!type struct 1019 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/config/arm/arm.c:2100"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -18083,7 +18083,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type union 1085 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/tree-eh.c:59"nil 
+ (!type union 1085 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/tree-eh.c:59"nil 
   (!fields 0 )
   nil 0 nil )
  
@@ -18713,7 +18713,7 @@
     (!srcfileloc  "gimple.h" 278)
     nil )
    (!pair  "u"
-    (!type union 1126 nil  gc_used "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/gimple.h:281"
+    (!type union 1126 nil  gc_used "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/gimple.h:281"
      (!srcfileloc  "gimple.h" 284)
      (!fields 2 
       (!pair  "fntype"
@@ -18818,11 +18818,11 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1134 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/varasm.c:4823"nil 
+ (!type struct 1134 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/varasm.c:4817"nil 
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1135 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/varasm.c:4579"nil 
+ (!type struct 1135 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/varasm.c:4573"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -18928,7 +18928,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type union 1154 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/mcf.c:344"nil 
+ (!type union 1154 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/mcf.c:344"nil 
   (!fields 0 )
   nil 0 nil )
  
@@ -19844,7 +19844,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1274 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/dwarf2cfi.c:218"nil 
+ (!type struct 1274 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/dwarf2cfi.c:218"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -19856,7 +19856,7 @@
   (!type pointer 1277 nil  gc_unused
    (!type already_seen 1276)
   )
-  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/dwarf2cfi.c:101"nil 
+  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/dwarf2cfi.c:101"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -20666,15 +20666,15 @@
         (!type struct 1370 
          (!type already_seen 1369)
          gc_pointed_to "rtx_constant_pool"
-         (!srcfileloc  "varasm.c" 3480)
+         (!srcfileloc  "varasm.c" 3474)
          (!fields 4 
           (!pair  "first"
            (!type already_seen 254)
-           (!srcfileloc  "varasm.c" 3468)
+           (!srcfileloc  "varasm.c" 3462)
            nil )
           (!pair  "last"
            (!type already_seen 254)
-           (!srcfileloc  "varasm.c" 3469)
+           (!srcfileloc  "varasm.c" 3463)
            nil )
           (!pair  "const_rtx_htab"
            (!type pointer 1371 nil  gc_used
@@ -20686,7 +20686,7 @@
              (!type already_seen 254)
              nil nil nil nil nil nil nil nil nil nil )
            )
-           (!srcfileloc  "varasm.c" 3475)
+           (!srcfileloc  "varasm.c" 3469)
            (!options 
             (!option param_is type 
              (!type already_seen 255)
@@ -20695,7 +20695,7 @@
           )
           (!pair  "offset"
            (!type already_seen 9)
-           (!srcfileloc  "varasm.c" 3479)
+           (!srcfileloc  "varasm.c" 3473)
            nil )
          )
          nil 511 nil nil )
@@ -21909,7 +21909,7 @@
  
  (!type already_seen 1324)
  
- (!type struct 1432 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/config/arm/arm.h:1582"nil 
+ (!type struct 1432 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/config/arm/arm.h:1582"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -21997,11 +21997,11 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1448 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/../libcpp/include/cpplib.h:999"nil 
+ (!type struct 1448 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/../libcpp/include/cpplib.h:999"nil 
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1449 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/../libcpp/include/cpplib.h:988"nil 
+ (!type struct 1449 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/../libcpp/include/cpplib.h:988"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -22055,7 +22055,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1458 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.11/gcc/../libcpp/include/line-map.h:627"nil 
+ (!type struct 1458 nil  gc_unused "anonymous:/home/pinkflozd/android/toolchain/.build/src/gcc-linaro-4.9-2014.12/gcc/../libcpp/include/line-map.h:627"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -23067,7 +23067,7 @@
   nil )
  (!pair  "builtin_type"
   (!type already_seen 9)
-  (!srcfileloc  "ada/gcc-interface/utils.c" 5855)
+  (!srcfileloc  "ada/gcc-interface/utils.c" 5854)
   nil )
  (!pair  "vec<loop_info,va_gc>"
   (!type already_seen 815)
@@ -23331,7 +23331,7 @@
   nil )
  (!pair  "arm_mangle_map_entry"
   (!type already_seen 1013)
-  (!srcfileloc  "config/arm/arm.c" 29820)
+  (!srcfileloc  "config/arm/arm.c" 29828)
   nil )
  (!pair  "builtin_arg"
   (!type already_seen 9)
@@ -23471,15 +23471,15 @@
   nil )
  (!pair  "tm_alias_pair"
   (!type already_seen 1133)
-  (!srcfileloc  "varasm.c" 5761)
+  (!srcfileloc  "varasm.c" 5755)
   nil )
  (!pair  "oc_local_state"
   (!type already_seen 1134)
-  (!srcfileloc  "varasm.c" 4844)
+  (!srcfileloc  "varasm.c" 4838)
   nil )
  (!pair  "oc_outer_state"
   (!type already_seen 1135)
-  (!srcfileloc  "varasm.c" 4582)
+  (!srcfileloc  "varasm.c" 4576)
   nil )
  (!pair  "block_info"
   (!type already_seen 1151)
@@ -26127,11 +26127,11 @@
   nil )
  (!pair  "temp_count"
   (!type already_seen 9)
-  (!srcfileloc  "cp/mangle.c" 3862)
+  (!srcfileloc  "cp/mangle.c" 3861)
   nil )
  (!pair  "conv_type_names"
   (!type already_seen 53)
-  (!srcfileloc  "cp/mangle.c" 3734)
+  (!srcfileloc  "cp/mangle.c" 3733)
   (!options 
    (!option param_is type 
     (!type already_seen 7)
@@ -26295,17 +26295,17 @@
   (!type array 1575 nil  gc_used "(int) ATTR_LAST" 
    (!type already_seen 5)
   )
-  (!srcfileloc  "ada/gcc-interface/utils.c" 5998)
+  (!srcfileloc  "ada/gcc-interface/utils.c" 5997)
   nil )
  (!pair  "builtin_types"
   (!type array 1576 nil  gc_used "(int) BT_LAST + 1" 
    (!type already_seen 5)
   )
-  (!srcfileloc  "ada/gcc-interface/utils.c" 5858)
+  (!srcfileloc  "ada/gcc-interface/utils.c" 5857)
   nil )
  (!pair  "dummy_global"
   (!type already_seen 5)
-  (!srcfileloc  "ada/gcc-interface/utils.c" 5646)
+  (!srcfileloc  "ada/gcc-interface/utils.c" 5645)
   nil )
  (!pair  "pad_type_hash_table"
   (!type already_seen 1488)
@@ -26381,11 +26381,11 @@
  )
  (!pair  "gnat_vms_condition_handler_decl"
   (!type already_seen 5)
-  (!srcfileloc  "ada/gcc-interface/trans.c" 2871)
+  (!srcfileloc  "ada/gcc-interface/trans.c" 2870)
   nil )
  (!pair  "vms_builtin_establish_handler_decl"
   (!type already_seen 5)
-  (!srcfileloc  "ada/gcc-interface/trans.c" 2870)
+  (!srcfileloc  "ada/gcc-interface/trans.c" 2869)
   nil )
  (!pair  "gnu_program_error_label_stack"
   (!type already_seen 45)
@@ -26478,7 +26478,7 @@
   nil )
  (!pair  "decl_tree_for_type"
   (!type already_seen 1492)
-  (!srcfileloc  "ubsan.c" 70)
+  (!srcfileloc  "ubsan.c" 71)
   (!options 
    (!option param_is type 
     (!type already_seen 856)
@@ -26690,15 +26690,15 @@
   nil )
  (!pair  "elf_fini_array_section"
   (!type already_seen 245)
-  (!srcfileloc  "varasm.c" 7543)
+  (!srcfileloc  "varasm.c" 7536)
   nil )
  (!pair  "elf_init_array_section"
   (!type already_seen 245)
-  (!srcfileloc  "varasm.c" 7542)
+  (!srcfileloc  "varasm.c" 7535)
   nil )
  (!pair  "tm_clone_hash"
   (!type already_seen 1498)
-  (!srcfileloc  "varasm.c" 5719)
+  (!srcfileloc  "varasm.c" 5713)
   (!options 
    (!option param_is type 
     (!type already_seen 1406)
@@ -26708,11 +26708,11 @@
  )
  (!pair  "weakref_targets"
   (!type already_seen 5)
-  (!srcfileloc  "varasm.c" 5413)
+  (!srcfileloc  "varasm.c" 5407)
   nil )
  (!pair  "const_desc_htab"
   (!type already_seen 1500)
-  (!srcfileloc  "varasm.c" 2792)
+  (!srcfileloc  "varasm.c" 2787)
   (!options 
    (!option param_is type 
     (!type already_seen 1330)
@@ -26721,27 +26721,27 @@
  )
  (!pair  "initial_trampoline"
   (!type already_seen 136)
-  (!srcfileloc  "varasm.c" 2503)
+  (!srcfileloc  "varasm.c" 2498)
   nil )
  (!pair  "weak_decls"
   (!type already_seen 5)
-  (!srcfileloc  "varasm.c" 2281)
+  (!srcfileloc  "varasm.c" 2276)
   nil )
  (!pair  "pending_assemble_externals"
   (!type already_seen 5)
-  (!srcfileloc  "varasm.c" 2211)
+  (!srcfileloc  "varasm.c" 2206)
   nil )
  (!pair  "shared_constant_pool"
   (!type already_seen 1369)
-  (!srcfileloc  "varasm.c" 189)
+  (!srcfileloc  "varasm.c" 184)
   nil )
  (!pair  "anchor_labelno"
   (!type already_seen 9)
-  (!srcfileloc  "varasm.c" 186)
+  (!srcfileloc  "varasm.c" 181)
   nil )
  (!pair  "object_block_htab"
   (!type already_seen 1502)
-  (!srcfileloc  "varasm.c" 183)
+  (!srcfileloc  "varasm.c" 178)
   (!options 
    (!option param_is type 
     (!type already_seen 244)
@@ -26750,7 +26750,7 @@
  )
  (!pair  "section_htab"
   (!type already_seen 1504)
-  (!srcfileloc  "varasm.c" 180)
+  (!srcfileloc  "varasm.c" 175)
   (!options 
    (!option param_is type 
     (!type already_seen 246)
@@ -26759,7 +26759,7 @@
  )
  (!pair  "unnamed_sections"
   (!type already_seen 245)
-  (!srcfileloc  "varasm.c" 172)
+  (!srcfileloc  "varasm.c" 167)
   nil )
  (!pair  "const_labelno"
   (!type already_seen 9)
@@ -27004,7 +27004,7 @@
   nil )
  (!pair  "block_move_fn"
   (!type already_seen 5)
-  (!srcfileloc  "expr.c" 1427)
+  (!srcfileloc  "expr.c" 1390)
   nil )
  (!pair  "stack_check_libfunc"
   (!type already_seen 136)

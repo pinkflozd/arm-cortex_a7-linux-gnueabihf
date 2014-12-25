@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2014-10-31" "gcc-4.9.3" "GNU"
+.TH GCC 1 "2014-12-05" "gcc-4.9.3" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -10720,7 +10720,7 @@ architecture.
 .IX Item "-mtune=name"
 Specify the name of the target processor for which \s-1GCC\s0 should tune the
 performance of the code.  Permissible values for this option are:
-\&\fBgeneric\fR, \fBcortex\-a53\fR, \fBcortex\-a57\fR.
+\&\fBgeneric\fR, \fBcortex\-a53\fR, \fBcortex\-a57\fR, \fBthunderx\fR.
 .Sp
 Additionally, this option can specify that \s-1GCC\s0 should tune the performance
 of the code for a big.LITTLE system.  The only permissible value is
@@ -11436,7 +11436,8 @@ Permissible names are: \fBarm2\fR, \fBarm250\fR,
 \&\fBcortex\-a5\fR, \fBcortex\-a7\fR, \fBcortex\-a8\fR, \fBcortex\-a9\fR,
 \&\fBcortex\-a12\fR, \fBcortex\-a15\fR, \fBcortex\-a53\fR, \fBcortex\-a57\fR,
 \&\fBcortex\-r4\fR,
-\&\fBcortex\-r4f\fR, \fBcortex\-r5\fR, \fBcortex\-r7\fR, \fBcortex\-m4\fR,
+\&\fBcortex\-r4f\fR, \fBcortex\-r5\fR, \fBcortex\-r7\fR, \fBcortex\-m7\fR,
+\&\fBcortex\-m4\fR,
 \&\fBcortex\-m3\fR,
 \&\fBcortex\-m1\fR,
 \&\fBcortex\-m0\fR,
@@ -11488,6 +11489,7 @@ available on the target.  Permissible names are: \fBvfp\fR, \fBvfpv3\fR,
 \&\fBvfpv3\-fp16\fR, \fBvfpv3\-d16\fR, \fBvfpv3\-d16\-fp16\fR, \fBvfpv3xd\fR,
 \&\fBvfpv3xd\-fp16\fR, \fBneon\fR, \fBneon\-fp16\fR, \fBvfpv4\fR,
 \&\fBvfpv4\-d16\fR, \fBfpv4\-sp\-d16\fR, \fBneon\-vfpv4\fR,
+\&\fBfpv5\-d16\fR, \fBfpv5\-sp\-d16\fR,
 \&\fBfp\-armv8\fR, \fBneon\-fp\-armv8\fR, and \fBcrypto\-neon\-fp\-armv8\fR.
 .Sp
 If \fB\-msoft\-float\fR is specified this specifies the format of
@@ -19926,8 +19928,8 @@ the rules of the \s-1ABI.\s0
 Set the instruction set, register set, and instruction scheduling parameters
 for machine type \fIcpu_type\fR.  Supported values for \fIcpu_type\fR are
 \&\fBv7\fR, \fBcypress\fR, \fBv8\fR, \fBsupersparc\fR, \fBhypersparc\fR,
-\&\fBleon\fR, \fBleon3\fR, \fBsparclite\fR, \fBf930\fR, \fBf934\fR,
-\&\fBsparclite86x\fR, \fBsparclet\fR, \fBtsc701\fR, \fBv9\fR,
+\&\fBleon\fR, \fBleon3\fR, \fBleon3v7\fR, \fBsparclite\fR, \fBf930\fR,
+\&\fBf934\fR, \fBsparclite86x\fR, \fBsparclet\fR, \fBtsc701\fR, \fBv9\fR,
 \&\fBultrasparc\fR, \fBultrasparc3\fR, \fBniagara\fR, \fBniagara2\fR,
 \&\fBniagara3\fR and \fBniagara4\fR.
 .Sp
@@ -19945,7 +19947,7 @@ implementations.
 .RS 4
 .IP "v7" 4
 .IX Item "v7"
-cypress
+cypress, leon3v7
 .IP "v8" 4
 .IX Item "v8"
 supersparc, hypersparc, leon, leon3
@@ -20011,11 +20013,11 @@ option \fB\-mcpu=\fR\fIcpu_type\fR does.
 The same values for \fB\-mcpu=\fR\fIcpu_type\fR can be used for
 \&\fB\-mtune=\fR\fIcpu_type\fR, but the only useful values are those
 that select a particular \s-1CPU\s0 implementation.  Those are \fBcypress\fR,
-\&\fBsupersparc\fR, \fBhypersparc\fR, \fBleon\fR, \fBleon3\fR, \fBf930\fR,
-\&\fBf934\fR, \fBsparclite86x\fR, \fBtsc701\fR, \fBultrasparc\fR,
-\&\fBultrasparc3\fR, \fBniagara\fR, \fBniagara2\fR, \fBniagara3\fR and
-\&\fBniagara4\fR.  With native Solaris and GNU/Linux toolchains, \fBnative\fR
-can also be used.
+\&\fBsupersparc\fR, \fBhypersparc\fR, \fBleon\fR, \fBleon3\fR,
+\&\fBleon3v7\fR, \fBf930\fR, \fBf934\fR, \fBsparclite86x\fR, \fBtsc701\fR,
+\&\fBultrasparc\fR, \fBultrasparc3\fR, \fBniagara\fR, \fBniagara2\fR,
+\&\fBniagara3\fR and \fBniagara4\fR.  With native Solaris and GNU/Linux
+toolchains, \fBnative\fR can also be used.
 .IP "\fB\-mv8plus\fR" 4
 .IX Item "-mv8plus"
 .PD 0
